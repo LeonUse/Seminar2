@@ -1,0 +1,28 @@
+* {
+    word-wrap: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.gameButton {
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.intro {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.afterGame {
+    display: none;
+}
+
+.small {
+    margin-top: 10px;
+    font-size: 30px;
+}
