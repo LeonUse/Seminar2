@@ -241,8 +241,8 @@ function Quiz() {
                                 {score} von {questions1.length} richtig - (
                                 {Math.round((score / questions1.length) * 100)}%)
                             </h2>
-                            <button onClick={() => restartGame()}>Quiz neustarten</button>
-                            <button onClick={() => backToMenu()}>Zum Menü</button>
+                            <button className="buttonQuiz" onClick={() => restartGame()}>Quiz neustarten</button>
+                            <button className="buttonQuiz" onClick={() => backToMenu()}>Zum Menü</button>
                         </div>
                     ) : (
                         <div className="question-card">
@@ -279,8 +279,8 @@ function Quiz() {
                                 {score} von {questions2.length} richtig - (
                                 {Math.round((score / questions2.length) * 100)}%)
                             </h2>
-                            <button onClick={() => restartGame()}>Quiz neustarten</button>
-                            <button onClick={() => backToMenu()}>Zum Menü</button>
+                            <button className="buttonQuiz" onClick={() => restartGame()}>Quiz neustarten</button>
+                            <button className="buttonQuiz" onClick={() => backToMenu()}>Zum Menü</button>
                         </div>
                     ) : (
                         <div className="question-card">
@@ -317,8 +317,8 @@ function Quiz() {
                                 {score} von {questions3.length} richtig - (
                                 {Math.round((score / questions3.length) * 100)}%)
                             </h2>
-                            <button onClick={() => restartGame()}>Quiz neustarten</button>
-                            <button onClick={() => backToMenu()}>Zum Menü</button>
+                            <button className="buttonQuiz" onClick={() => restartGame()}>Quiz neustarten</button>
+                            <button className="buttonQuiz" onClick={() => backToMenu()}>Zum Menü</button>
                         </div>
                     ) : (
                         <div className="question-card">
