@@ -34,7 +34,7 @@ export default function CardExample() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to="/volume"><Button size="small" color="primary">
+              <Link to="/volume" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                 Game
               </Button></Link>
             </CardActions>
@@ -58,7 +58,7 @@ export default function CardExample() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to="/velocityGame"><Button size="small" color="primary">
+              <Link to="/velocityGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                 Game
               </Button></Link>
             </CardActions>
@@ -82,7 +82,7 @@ export default function CardExample() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to="/variety"><Button size="small" color="primary">
+              <Link to="/varietyGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                 Game
               </Button></Link>
             </CardActions>
@@ -106,7 +106,7 @@ export default function CardExample() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to="/variability"><Button size="small" color="primary">
+              <Link to="/variability" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                 Game
               </Button></Link>
             </CardActions>

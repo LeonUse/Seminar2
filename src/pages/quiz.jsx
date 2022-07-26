@@ -1,3 +1,4 @@
+// Quiz basiert auf dem Quiz von https://github.com/davidrazmadzeExtra/Multiple_Choice_Quiz_ReactJS.
 import React, { useState } from "react";
 import '../pages/quiz.css'
 

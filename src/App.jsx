@@ -13,6 +13,7 @@ import Lektion1 from './pages/lektion1';
 import Lektion2 from './pages/lektion2';
 import Lektion3 from './pages/lektion3';
 import VelocityGame from './pages/velocityGame';
+import VarietyGame from './pages/varietyGame';
 import Quiz from './pages/quiz';
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/lektion2' element={<Lektion2 />} />
           <Route path='/lektion3' element={<Lektion3 />} />
           <Route path='/velocityGame' element={<VelocityGame />} />
+          <Route path='/varietyGame' element={<VarietyGame />} />
           <Route path='/quiz' element={<Quiz />} />
         </Routes>
       </BrowserRouter>
