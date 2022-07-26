@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 
-const pages = ['Lektion 1', 'Lektion 2', 'Lektion 3'];
+const pages = ['Lektion 1', 'Lektion 2', 'Lektion 3', 'Quiz'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Login'];
 
 const ResponsiveAppBar = () => {
@@ -41,24 +41,24 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-         <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              font: 'Monaco',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            E(asy) Learn
-          </Typography>
+          <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                font: 'Monaco',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              E(asy) Learn
+            </Typography>
           </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,65 +90,76 @@ const ResponsiveAppBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              
+
               <MenuItem onClick={handleCloseNavMenu}>
                 <Link to="/lektion1" style={{ textDecoration: 'none', color: 'black' }}>
                   <Typography color={'black'} textAlign="center">Lektion 1</Typography>
                 </Link>
-                </MenuItem>
+              </MenuItem>
 
-                <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={handleCloseNavMenu}>
                 <Link to="/lektion2" style={{ textDecoration: 'none', color: 'black' }}>
                   <Typography color={'black'} textAlign="center">Lektion 2</Typography>
                 </Link>
-                </MenuItem>
+              </MenuItem>
 
-                <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={handleCloseNavMenu}>
                 <Link to="/lektion3" style={{ textDecoration: 'none', color: 'black' }}>
                   <Typography color={'black'} textAlign="center">Lektion 3</Typography>
                 </Link>
-                </MenuItem>
+              </MenuItem>
 
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link to="/quiz" style={{ textDecoration: 'none', color: 'black' }}>
+                  <Typography color={'black'} textAlign="center">Quiz</Typography>
+                </Link>
+              </MenuItem>
 
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            E(asy) Learn
-          </Typography>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              E(asy) Learn
+            </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <MenuItem onClick={handleCloseNavMenu}>
-            <Link to="/lektion1" style={{ textDecoration: 'none', color: 'white' }}>
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Link to="/lektion1" style={{ textDecoration: 'none', color: 'white' }}>
                 <Typography color={'white'} textDecoration={'none'} textAlign="center">Lektion 1</Typography>
-            </Link>
+              </Link>
             </MenuItem>
 
-            <MenuItem onClick={handleCloseNavMenu} style={{textDecoration: "none"}}>
-            <Link to="/lektion2" style={{ textDecoration: 'none', color: 'white' }}>
+            <MenuItem onClick={handleCloseNavMenu} style={{ textDecoration: "none" }}>
+              <Link to="/lektion2" style={{ textDecoration: 'none', color: 'white' }}>
                 <Typography color={'white'} textDecoration="none" textAlign="center">Lektion 2</Typography>
-            </Link>
+              </Link>
             </MenuItem>
 
             <MenuItem onClick={handleCloseNavMenu}>
-            <Link to="/lektion3" style={{ textDecoration: 'none', color: 'white' }}>
+              <Link to="/lektion3" style={{ textDecoration: 'none', color: 'white' }}>
                 <Typography color={'white'} textAlign="center">Lektion 3</Typography>
-            </Link>
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Link to="/quiz" style={{ textDecoration: 'none', color: 'white' }}>
+                <Typography color={'white'} textAlign="center">Quiz</Typography>
+              </Link>
             </MenuItem>
 
           </Box>
