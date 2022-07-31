@@ -16,7 +16,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 
 const pages = ['Lektion 1', 'Lektion 2', 'Lektion 3', 'Quiz'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Login'];
+const settings = ['Account', 'Dashboard', 'Login'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

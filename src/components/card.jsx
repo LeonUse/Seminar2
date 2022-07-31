@@ -34,7 +34,7 @@ export default function CardExample() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to="/volume" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+              <Link to="/volumeGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                 Game
               </Button></Link>
             </CardActions>

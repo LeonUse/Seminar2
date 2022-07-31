@@ -33,19 +33,18 @@ export default function VarietyGame() {
                     </ul>
                     <div className="things_to_drag" style={{ marginTop: 20 }}>
                         <Boxable targetKey="essen" label="Banane" image="img/banane.png" />
-                        <Boxable targetKey="essen" label="Cheeseburger" image="img/cheeseburger.png" />
-                        <Boxable targetKey="essen" label="Orange" image="img/orange.png" />
-                        <Boxable targetKey="essen" label="Gurke" image="img/gurke.png" />
-                        <Boxable targetKey="tier" label="Gorilla" image="img/gorilla.png" />
-                        <Boxable targetKey="tier" label="Hund" image="img/hund.png" />
-                        <Boxable targetKey="form" label="Kreis" image="img/kreis.png" />
                         <Boxable targetKey="form" label="Quadrat" image="img/quadrat.png" />
+                        <Boxable targetKey="tier" label="Hund" image="img/hund.png" />
                         <Boxable targetKey="form" label="Dreieck" image="img/dreieck.png" />
+                        <Boxable targetKey="tier" label="Gorilla" image="img/gorilla.png" />
+                        <Boxable targetKey="form" label="Kreis" image="img/kreis.png" />
+                        <Boxable targetKey="essen" label="Cheeseburger" image="img/cheeseburger.png" />
+
                     </div>
                     <div className="headers">
-                        <h1>Essen</h1>
-                        <h1>Tiere</h1>
-                        <h1>Formen</h1>
+                        <h8>Essen</h8>
+                        <h8>Tiere</h8>
+                        <h8>Formen</h8>
                     </div>
                     <div className="boxes">
                         <Box targetKey="essen" />
@@ -56,7 +55,6 @@ export default function VarietyGame() {
                     <h3>Wenn du alles Ordnungsgemäß sortiert hast, dann geht es hier zur nächsten Stufe</h3>
                     <ul style={{ marginTop: 20 }}>
                         <li>
-                            <button className='buttonVariety' onClick={() => backToStart()}>Zurück zum Start</button>
                             <button className='buttonVariety' onClick={() => nextLevel()}>Nächste Stufe</button>
                         </li>
                     </ul>
@@ -75,12 +73,28 @@ export default function VarietyGame() {
                     </ul>
                     <div className="things_to_drag" style={{ marginTop: 20 }}>
                         <Boxable targetKey="essen" label="Banane" image="img/banane.png" />
+                        <Boxable targetKey="form" label="Quadrat" image="img/quadrat.png" />
+                        <Boxable targetKey="tier" label="Hund" image="img/hund.png" />
+                        <Boxable targetKey="form" label="Dreieck" image="img/dreieck.png" />
+                        <Boxable targetKey="tier" label="Gorilla" image="img/gorilla.png" />
+                        <Boxable targetKey="form" label="Kreis" image="img/kreis.png" />
+                        <Boxable targetKey="essen" label="Cheeseburger" image="img/cheeseburger.png" />
+
+                        <Boxable targetKey="essen" label="Pommes" image="img/pommes.png" />
+                        <Boxable targetKey="tier" label="Vogel" image="img/vogel.png" />
+                        <Boxable targetKey="false" label="Prinzessin" image="img/prinzessin.png" />
+                        <Boxable targetKey="tier" label="Känguru" image="img/känguru.png" />
+                        <Boxable targetKey="form" label="Fahrrad" image="img/fahrrad.png" />
+                        <Boxable targetKey="false" label="Auto" image="img/auto.png" />
+                        <Boxable targetKey="essen" label="Orange" image="img/orange.png" />
+                        <Boxable targetKey="form" label="Kopfhörer" image="img/kopfhörer.png" />
+                        <Boxable targetKey="essen" label="Gurke" image="img/gurke.png" />
 
                     </div>
                     <div className="headers">
-                        <h1>Essen</h1>
-                        <h1>Tiere</h1>
-                        <h1>Formen</h1>
+                        <h8>Essen</h8>
+                        <h8>Tiere</h8>
+                        <h8>Formen</h8>
                     </div>
                     <div className="boxes">
                         <Box targetKey="essen" />
@@ -88,11 +102,15 @@ export default function VarietyGame() {
                         <Box targetKey="form" />
                     </div>
                     <div style={{ clear: "both" }}>&nbsp;</div>
-                    <h3>Wenn du alles Ordnungsgemäß sortiert hast, dann geht es hier zur nächsten Stufe</h3>
                     <ul style={{ marginTop: 20 }}>
                         <li>
-                            <button className='buttonVariety' onClick={() => backToStart()}>Zurück zum Start</button>
-                            <button className='buttonVariety' onClick={() => nextLevel()}>Nächste Stufe</button>
+                            <strong>Wie du siehst passen nicht alle Bilder in die Vorgegebenen Kategorien. Genau das gleiche Problem kann auch bei Big Data auftreten.</strong>
+                        </li>
+                        <li>
+                            <strong>Die Daten können von vielen verschiedenen Systemen kommen und daher unterschiedliche Formate haben, sortiert, unsortiert oder auch unvollständig sein.</strong>
+                        </li>
+                        <li>
+                            <strong>Dadurch wird die Speicherung und Analyse erschwert und es müssen neue Methoden angewendet werden. z.B. NoSQL-Datenbanken</strong>
                         </li>
                     </ul>
                 </div >
@@ -109,113 +127,3 @@ export default function VarietyGame() {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
-function not(a, b) {
-    return a.filter((value) => b.indexOf(value) === -1);
-}
-
-function intersection(a, b) {
-    return a.filter((value) => b.indexOf(value) !== -1);
-}
-
-export default function VarietyGame() {
-    const [checked, setChecked] = React.useState([]);
-    const [left, setLeft] = React.useState([0, 1, 2, 3]);
-    const [right, setRight] = React.useState([4, 5, 6, 7]);
-
-    const customList = (items) => (
-        <Paper sx={{ width: 400, height: 600, overflow: 'auto', marginTop: 20 }}>
-            <List dense component="div" role="list">
-                {items.map((value) => {
-                    const labelId = `transfer-list-item-${value}-label`;
-                    return (
-                        <Draggable key={value} draggableId={labelId} index={value}>
-                            {(provided) => (
-                                <ListItem
-                                    role="listitem"
-                                    {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}
-                                >
-                                    <ListItemText id={labelId} primary={`List item ${value + 1}`} />
-                                </ListItem>
-                            )}
-                        </Draggable>
-                    );
-                })}
-                <ListItem />
-            </List>
-        </Paper>
-    );
-
-    return (
-        <DragDropContext>
-            <Droppable droppableId='grid'>
-                {(provided) => (
-                    <Grid container spacing={2} justifyContent="center" alignItems="center" {...provided.droppableProps} ref={provided.innerRef}>
-
-                        <Grid item>{customList(left)}</Grid>
-                        <Grid item>{customList(right)}</Grid>
-                    </Grid>
-                )}
-            </Droppable>
-        </DragDropContext>
-    );
-}
-*/

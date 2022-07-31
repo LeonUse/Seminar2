@@ -8,7 +8,6 @@ export default function BoxItem(props) {
         console.log("BoxItem handleDrop ", e);
         e.stopPropagation();
         swap(e.dragData.index, index, e.dragData);
-        //e.containerElem.style.visibility = "hidden";
     };
 
     const deleteMe = () => {
