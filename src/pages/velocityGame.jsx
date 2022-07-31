@@ -9,6 +9,10 @@ import Paper from '@mui/material/Paper';
 import { faker } from '@faker-js/faker';
 import '../pages/velocityGame.css'
 import { Avatar, ImageListItem, ListItemAvatar, ListItemIcon } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Typography from '@mui/material/Typography';
+import { color } from '@mui/system';
+
 
 function not(a, b) {
     return a.filter((value) => b.indexOf(value) === -1);
@@ -19,6 +23,8 @@ function intersection(a, b) {
 }
 
 export default function velocityGame() {
+
+    const [showResults, setShowResults] = React.useState(true); //Prüfen, ob Ergebnis zeige
     const [checked, setChecked] = React.useState([]);
     const [left, setLeft] = React.useState(new Array(10)
         .fill(true)
@@ -45,8 +51,7 @@ export default function velocityGame() {
             } else {
                 console.log("stop");
                 clearInterval(timerID);
-                var t = document.getElementById("afterGameDiv");
-                t.style.display = "block";
+                setShowResults(true);
             }
         }, timeX);
     }
@@ -128,48 +133,65 @@ export default function velocityGame() {
 
     return (
         <>
-            <div className="intro">
-                <h1>Dieses Game zeigt dir, was Geschwindigkeit im Sinne von Big Data bedeutet.</h1>
-                <p>Deine Aufgabe ist es die Kazen Bilder links und die anderen Bilder rechts zu sortieren.</p>
-                <div className="afterGame" id='afterGameDiv'>
-                    <p class="small">Wie du siehst kommen die Daten viel zu schnell.</p>
-                    <p class="small">Man könnte dein Erlebnis mit einer traditionellen Software vergleiche, die Versucht mit der Geschwindigkeit von Big Data mitzuhalten.</p>
-                    <p class="small">Wenn du dein Glück dennoch ein weiteres mal Versuchen willst drück einfach F5 oder lade die Seite neu.</p>
+            {showResults ? (
+                <div className="intro">
+                    <h1>Dieses Game zeigt dir, was Geschwindigkeit im Sinne von Big Data bedeutet.</h1>
+                    <p>Deine Aufgabe ist es die Kazen Bilder links und die anderen Bilder rechts zu sortieren.</p>
+                    <div>
+                        <p class="small">Wie du siehst kommen die Daten viel zu schnell.</p>
+                        <p class="small">Man könnte dein Erlebnis mit einer traditionellen Software vergleiche, die Versucht mit der Geschwindigkeit von Big Data mitzuhalten.</p>
+                        <p class="small">Wenn du dein Glück dennoch ein weiteres mal Versuchen willst drück einfach F5 oder lade die Seite neu.</p>
+                    </div>
+                    <ul style={{ marginTop: 20 }}>
+                        <li>
+                            <Link to="/lektion1" style={{ textDecoration: 'none', color: 'black' }}>
+                                <Typography color={'black'} textAlign="center">Lektion 1</Typography>
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
-                <div className='gameButton'>
-                    <Button variant='outlined' onClick={() => { startTimer() }}>
-                        Start Game
-                    </Button>
-                </div>
-            </div>
-            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                <Grid item>{customList(left)}</Grid>
-                <Grid item>
-                    <Grid container direction="column" alignItems="center">
-                        <Button
-                            sx={{ my: 0.5 }}
-                            variant="outlined"
-                            size="large"
-                            onClick={handleCheckedRight}
-                            disabled={leftChecked.length === 0}
-                            aria-label="move selected right"
-                        >
-                            &gt;
-                        </Button>
-                        <Button
-                            sx={{ my: 0.8 }}
-                            variant="outlined"
-                            size="large"
-                            onClick={handleCheckedLeft}
-                            disabled={rightChecked.length === 0}
-                            aria-label="move selected left"
-                        >
-                            &lt;
-                        </Button>
+            ) : (
+                <>
+                    <div className="intro">
+                        <h1>Dieses Game zeigt dir, was Geschwindigkeit im Sinne von Big Data bedeutet.</h1>
+                        <p>Deine Aufgabe ist es die Kazen Bilder links und die anderen Bilder rechts zu sortieren.</p>
+                        <div className='gameButton'>
+                            <Button variant='outlined' onClick={() => { startTimer() }}>
+                                Start Game
+                            </Button>
+                        </div>
+                    </div>
+                    <Grid container spacing={2} justifyContent="center" alignItems="center">
+                        <Grid item>{customList(left)}</Grid>
+                        <Grid item>
+                            <Grid container direction="column" alignItems="center">
+                                <Button
+                                    sx={{ my: 0.5 }}
+                                    variant="outlined"
+                                    size="large"
+                                    onClick={handleCheckedRight}
+                                    disabled={leftChecked.length === 0}
+                                    aria-label="move selected right"
+                                >
+                                    &gt;
+                                </Button>
+                                <Button
+                                    sx={{ my: 0.8 }}
+                                    variant="outlined"
+                                    size="large"
+                                    onClick={handleCheckedLeft}
+                                    disabled={rightChecked.length === 0}
+                                    aria-label="move selected left"
+                                >
+                                    &lt;
+                                </Button>
+                            </Grid>
+                        </Grid>
+                        <Grid item>{customList(right)}</Grid>
                     </Grid>
-                </Grid>
-                <Grid item>{customList(right)}</Grid>
-            </Grid>
+                </>
+            )
+            }
         </>
     );
 }

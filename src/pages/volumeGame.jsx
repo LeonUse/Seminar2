@@ -14,7 +14,8 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -30,6 +31,7 @@ export default function VarietyGame() {
     const [right, setRight] = useState("falsch"); //Prüfen, ob die ausgewählte Liste richtig ist
     const [click, setClick] = useState(true); //Prüfen, ob schon eine Liste ausgewählt wurde
     const [open, setOpen] = useState(false); //Snackbar
+    const [score, setScore] = useState(0);
     const [itemNumber, setItemNumber] = useState(5);
     const [wordsTrue, setWordsTrue] = useState(new Array(itemNumber)
         .fill(true)
@@ -79,23 +81,26 @@ export default function VarietyGame() {
             setShowChoices(false);
         } else {
             setShowChoices(true);
-        }
-    };
-
-    const nextLevel = () => {
-        if (level + 1 < 4) {
-            setLevel(level + 1);
             switch (level) {
                 case 0:
                     setItemNumber(15);
                     break;
                 case 1:
-                    setItemNumber(200);
+                    setItemNumber(50);
                     break;
                 case 2:
                     setItemNumber(200);
                     break;
             }
+        }
+    };
+
+    const nextLevel = () => {
+        if (level + 1 < 5) {
+            setLevel(level + 1);
+            setWordsTrue([]);
+            wordsFalse1.splice(0, wordsFalse1.length - 1);
+            wordsFalse2.splice(0, wordsFalse2.length - 1);
             setWordsTrue(new Array(itemNumber)
                 .fill(true)
                 .map(() => faker.word.adjective(true)));
@@ -115,9 +120,11 @@ export default function VarietyGame() {
         if (click) {
             if (value == "wordsTrue") {
                 setRight("richtig");
+                setScore(score + 1);
             }
             setShowResults(true);
             setClick(false);
+            console.log("Right?:", right);
         } else {
             setOpen(true);
         }
@@ -421,6 +428,31 @@ export default function VarietyGame() {
                     )
                     }
 
+                </>
+
+            );
+
+
+            break;
+        case 4:
+            return (
+                <>
+                    <h2 style={{ padding: 20, textAlign: "center" }}>Herzlichen Glückwunsch, du hast {score} von 4 Listen wiedergefunden.</h2>
+                    <div className="bottomList">
+                        <h3>Wie du wahrscheinlich gemerkt hast, wurde es zunehmend schwerer, da die Listen immer größer geworden sind.</h3>
+                        <h3>Dabei sind diese Listen noch lange nicht groß genug, um mit Big Data in Verbindung gebracht zu werden.</h3>
+                        <h3>Bei Big Data geht es um mehrere Terrabyte an Daten.</h3>
+                        <h3>Durch dieses Spiel solltest du aber einen ersten Eindruck bekommen haben und verstanden haben,
+                            dass es zu viele Daten sind für herkömmliche Systeme.</h3>
+                        <h3>Was daduch für weitere Probleme entstehen erfährst du in Lektion 2.</h3>
+                        <ul style={{ marginTop: 20 }}>
+                            <li>
+                                <Link to="/lektion1" style={{ textDecoration: 'none', color: 'black' }}>
+                                    <Typography color={'black'} textAlign="center">Lektion 1</Typography>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </>
 
             );

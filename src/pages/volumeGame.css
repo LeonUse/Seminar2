@@ -1,12 +1,16 @@
 .bottomList {
-    width: 100%;
+    width: 95%;
     height: auto;
     text-align: center;
     padding-top: 40px;
+    margin-top: 20px;
+    margin-left: 50px;
 }
 
 h3 {
     font-size: 30px;
+    padding: 5px;
+
 }
 
 .tableLists {

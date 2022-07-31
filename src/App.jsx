@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
-import './App.css'
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import {
@@ -15,6 +14,8 @@ import VelocityGame from './pages/velocityGame';
 import VarietyGame from './pages/varietyGame';
 import VolumeGame from './pages/volumeGame';
 import Quiz from './pages/quiz';
+import LoadingGame from './pages/loadingGame';
+import ParallelGame from './pages/parallelGame';
 function App() {
   return (
     <>
@@ -29,6 +30,8 @@ function App() {
           <Route path='/varietyGame' element={<VarietyGame />} />
           <Route path='/volumeGame' element={<VolumeGame />} />
           <Route path='/quiz' element={<Quiz />} />
+          <Route path='/loadingGame' element={<LoadingGame />} />
+          <Route path='/parallelGame' element={<ParallelGame />} />
         </Routes>
       </BrowserRouter>
     </>

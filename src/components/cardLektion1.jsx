@@ -106,7 +106,7 @@ export default function CardExample() {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to="/variability" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+              <Link to="/variabilityGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                 Game
               </Button></Link>
             </CardActions>

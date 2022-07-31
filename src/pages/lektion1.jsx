@@ -1,6 +1,6 @@
 import { Container } from '@mui/material'
 import '../pages/lektion1.css'
-import Card from '../components/card'
+import CardLektion1 from '../components/cardLektion1'
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -13,7 +13,7 @@ function Lektion1() {
       <iframe className='video' width="840" height="472" src="https://www.youtube-nocookie.com/embed/Ph6YSr7f5-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div className="body">
         <Container maxWidth="xl">
-          <Card />
+          <CardLektion1 />
         </Container>
       </div>
     </div>

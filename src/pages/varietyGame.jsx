@@ -3,6 +3,9 @@ import '../pages/varietyGame.css'
 import Boxable from "./varietyGameBoxable";
 import Box from "./varietyGameBox";
 import React, { useState } from "react";
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+
 
 export default function VarietyGame() {
     const [level, setLevel] = useState(0);
@@ -111,6 +114,13 @@ export default function VarietyGame() {
                         </li>
                         <li>
                             <strong>Dadurch wird die Speicherung und Analyse erschwert und es müssen neue Methoden angewendet werden. z.B. NoSQL-Datenbanken</strong>
+                        </li>
+                        <li>
+                            <li>
+                                <Link to="/lektion1" style={{ textDecoration: 'none', color: 'black' }}>
+                                    <Typography color={'black'} textAlign="center">Lektion 1</Typography>
+                                </Link>
+                            </li>
                         </li>
                     </ul>
                 </div >
