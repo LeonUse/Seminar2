@@ -5,6 +5,7 @@ import Box from "./varietyGameBox";
 import React, { useState } from "react";
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import { TableHead } from '@mui/material';
 
 
 export default function VarietyGame() {
@@ -44,15 +45,22 @@ export default function VarietyGame() {
                         <Boxable targetKey="essen" label="Cheeseburger" image="img/cheeseburger.png" />
 
                     </div>
-                    <div className="headers">
-                        <h8>Essen</h8>
-                        <h8>Tiere</h8>
-                        <h8>Formen</h8>
-                    </div>
                     <div className="boxes">
-                        <Box targetKey="essen" />
-                        <Box targetKey="tier" />
-                        <Box targetKey="form" />
+                        <table style={{ border: 0 }}>
+                            <tr>
+                                <th><h8>Essen</h8></th>
+                                <th><h8>Tier</h8></th>
+                                <th><h8>Form</h8></th>
+                            </tr>
+                            <tr>
+                                <th><Box targetKey="essen" /></th>
+                                <th> <Box targetKey="tier" /></th>
+                                <th> <Box targetKey="form" /></th>
+                            </tr>
+                        </table>
+
+
+
                     </div>
                     <div style={{ clear: "both" }}>&nbsp;</div>
                     <h3>Wenn du alles Ordnungsgemäß sortiert hast, dann geht es hier zur nächsten Stufe</h3>

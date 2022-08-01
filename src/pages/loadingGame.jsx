@@ -1,7 +1,6 @@
 
 
 
-
 function LoadingGame() {
     return (
         <div className='head'>

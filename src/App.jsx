@@ -16,6 +16,8 @@ import VolumeGame from './pages/volumeGame';
 import Quiz from './pages/quiz';
 import LoadingGame from './pages/loadingGame';
 import ParallelGame from './pages/parallelGame';
+import NotFound from './pages/notFound';
+
 function App() {
   return (
     <>
@@ -32,6 +34,7 @@ function App() {
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/loadingGame' element={<LoadingGame />} />
           <Route path='/parallelGame' element={<ParallelGame />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -31,6 +31,7 @@ export default function VarietyGame() {
     const [right, setRight] = useState("falsch"); //Prüfen, ob die ausgewählte Liste richtig ist
     const [click, setClick] = useState(true); //Prüfen, ob schon eine Liste ausgewählt wurde
     const [open, setOpen] = useState(false); //Snackbar
+    const [end, setEnd] = useState(false);
     const [score, setScore] = useState(0);
     const [itemNumber, setItemNumber] = useState(5);
     const [wordsTrue, setWordsTrue] = useState(new Array(itemNumber)
@@ -98,9 +99,6 @@ export default function VarietyGame() {
     const nextLevel = () => {
         if (level + 1 < 5) {
             setLevel(level + 1);
-            setWordsTrue([]);
-            wordsFalse1.splice(0, wordsFalse1.length - 1);
-            wordsFalse2.splice(0, wordsFalse2.length - 1);
             setWordsTrue(new Array(itemNumber)
                 .fill(true)
                 .map(() => faker.word.adjective(true)));
@@ -113,6 +111,7 @@ export default function VarietyGame() {
 
         } else {
             console.log("Maximales Level erreicht");
+            setEnd(true);
         }
     };
 
@@ -186,258 +185,11 @@ export default function VarietyGame() {
         </Paper>
     );
 
-    switch (level) {
-        case 0:
-            return (
+    return (
+        <>
+            {end ? (
                 <>
-                    {showChoices ? (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
-                                <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
-                                <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
-                            </Grid>
-
-
-                            {showResults ? (
-                                <>
-                                    <div className="bottomList">
-                                        <h3>Die gesuchte Liste ist Nummer 1. Deine gewählte Liste ist {right}.</h3>
-                                        <ul style={{ marginTop: 20 }}>
-                                            <li>
-                                                <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                                        <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
-                                            Du kannst deine Liste nicht mehrfach wählen.
-                                        </Alert>
-                                    </Snackbar>
-                                </>
-                            ) : (
-                                <div className="bottomList">
-                                    <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
-                                </div>
-
-                            )}
-                        </>
-
-                    ) : (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customList(wordsTrue)}</Grid>
-                            </Grid>
-
-                            <div className="bottomList">
-                                <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
-                                <ul style={{ marginTop: 20 }}>
-                                    <li>
-                                        <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </>
-                    )
-                    }
-
-                </>
-
-            );
-
-            break;
-        case 1:
-            return (
-                <>
-                    {showChoices ? (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
-                                <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
-                                <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
-                            </Grid>
-
-
-                            {showResults ? (
-                                <>
-                                    <div className="bottomList">
-                                        <h3>Die gesuchte Liste ist Nummer 2. Deine gewählte Liste ist {right}.</h3>
-                                        <ul style={{ marginTop: 20 }}>
-                                            <li>
-                                                <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                                        <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
-                                            Du kannst deine Liste nicht mehrfach wählen.
-                                        </Alert>
-                                    </Snackbar>
-                                </>
-                            ) : (
-                                <div className="bottomList">
-                                    <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
-                                </div>
-
-                            )}
-                        </>
-
-                    ) : (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customList(wordsTrue)}</Grid>
-                            </Grid>
-
-                            <div className="bottomList">
-                                <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
-                                <ul style={{ marginTop: 20 }}>
-                                    <li>
-                                        <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </>
-                    )
-                    }
-
-                </>
-
-            );
-
-
-            break;
-        case 2:
-            return (
-                <>
-                    {showChoices ? (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
-                                <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
-                                <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
-                            </Grid>
-
-
-                            {showResults ? (
-                                <>
-                                    <div className="bottomList">
-                                        <h3>Die gesuchte Liste ist Nummer 2. Deine gewählte Liste ist {right}.</h3>
-                                        <ul style={{ marginTop: 20 }}>
-                                            <li>
-                                                <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                                        <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
-                                            Du kannst deine Liste nicht mehrfach wählen.
-                                        </Alert>
-                                    </Snackbar>
-                                </>
-                            ) : (
-                                <div className="bottomList">
-                                    <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
-                                </div>
-
-                            )}
-                        </>
-
-                    ) : (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customList(wordsTrue)}</Grid>
-                            </Grid>
-
-                            <div className="bottomList">
-                                <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
-                                <ul style={{ marginTop: 20 }}>
-                                    <li>
-                                        <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </>
-                    )
-                    }
-
-                </>
-
-            );
-
-
-            break;
-        case 3:
-            return (
-                <>
-                    {showChoices ? (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
-                                <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
-                                <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
-                            </Grid>
-
-
-                            {showResults ? (
-                                <>
-                                    <div className="bottomList">
-                                        <h3>Die gesuchte Liste ist Nummer 3. Deine gewählte Liste ist {right}.</h3>
-                                        <ul style={{ marginTop: 20 }}>
-                                            <li>
-                                                <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                                        <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
-                                            Du kannst deine Liste nicht mehrfach wählen.
-                                        </Alert>
-                                    </Snackbar>
-                                </>
-                            ) : (
-                                <div className="bottomList">
-                                    <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
-                                </div>
-
-                            )}
-                        </>
-
-                    ) : (
-                        <>
-                            <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
-                            <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                <Grid item>{customList(wordsTrue)}</Grid>
-                            </Grid>
-
-                            <div className="bottomList">
-                                <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
-                                <ul style={{ marginTop: 20 }}>
-                                    <li>
-                                        <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </>
-                    )
-                    }
-
-                </>
-
-            );
-
-
-            break;
-        case 4:
-            return (
-                <>
-                    <h2 style={{ padding: 20, textAlign: "center" }}>Herzlichen Glückwunsch, du hast {score} von 4 Listen wiedergefunden.</h2>
+                    <h1 style={{ padding: 20, textAlign: "center", fontSize: 50, marginTop: 10 }}>Herzlichen Glückwunsch, du hast {score} von 4 Listen wiedergefunden.</h1>
                     <div className="bottomList">
                         <h3>Wie du wahrscheinlich gemerkt hast, wurde es zunehmend schwerer, da die Listen immer größer geworden sind.</h3>
                         <h3>Dabei sind diese Listen noch lange nicht groß genug, um mit Big Data in Verbindung gebracht zu werden.</h3>
@@ -455,19 +207,375 @@ export default function VarietyGame() {
                     </div>
                 </>
 
-            );
+            ) : (
+
+                <>
+                    {
+                        showChoices ? (
+                            <>
+                                <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center">
+                                    <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
+                                    <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
+                                    <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
+                                </Grid>
 
 
-            break;
-        default:
-            return (
-                <div className="App drag_things_to_boxes" style={{ marginTop: 20 }}>
-                    <h2>Ups, da ist etwas schief gegangen. Bitte lade die Seite neu.</h2>
-                </div >
-            );
-            break;
-    }
+                                {showResults ? (
+                                    <>
+                                        <div className="bottomList">
+                                            <h3>Die gesuchte Liste ist Nummer 1. Deine gewählte Liste ist {right}.</h3>
+                                            <ul style={{ marginTop: 20 }}>
+                                                <li>
+                                                    <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                            <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                                                Du kannst deine Liste nicht mehrfach wählen.
+                                            </Alert>
+                                        </Snackbar>
+                                    </>
+                                ) : (
+                                    <div className="bottomList">
+                                        <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
+                                    </div>
+
+                                )}
+                            </>
+
+                        ) : (
+                            <>
+                                <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
+                                <Grid container spacing={2} justifyContent="center" alignItems="center">
+                                    <Grid item>{customList(wordsTrue)}</Grid>
+                                </Grid>
+
+                                <div className="bottomList">
+                                    <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
+                                    <ul style={{ marginTop: 20 }}>
+                                        <li>
+                                            <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </>
+                        )
+                    }
+                </>
+
+            )
+            }
+        </>
+    );
 
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+switch (level) {
+    case 0:
+        return (
+            <>
+                {showChoices ? (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
+                            <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
+                            <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
+                        </Grid>
+
+
+                        {showResults ? (
+                            <>
+                                <div className="bottomList">
+                                    <h3>Die gesuchte Liste ist Nummer 1. Deine gewählte Liste ist {right}.</h3>
+                                    <ul style={{ marginTop: 20 }}>
+                                        <li>
+                                            <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                    <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                                        Du kannst deine Liste nicht mehrfach wählen.
+                                    </Alert>
+                                </Snackbar>
+                            </>
+                        ) : (
+                            <div className="bottomList">
+                                <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
+                            </div>
+
+                        )}
+                    </>
+
+                ) : (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customList(wordsTrue)}</Grid>
+                        </Grid>
+
+                        <div className="bottomList">
+                            <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
+                            <ul style={{ marginTop: 20 }}>
+                                <li>
+                                    <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                )
+                }
+
+            </>
+
+        );
+
+        break;
+    case 1:
+        return (
+            <>
+                {showChoices ? (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
+                            <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
+                            <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
+                        </Grid>
+
+
+                        {showResults ? (
+                            <>
+                                <div className="bottomList">
+                                    <h3>Die gesuchte Liste ist Nummer 2. Deine gewählte Liste ist {right}.</h3>
+                                    <ul style={{ marginTop: 20 }}>
+                                        <li>
+                                            <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                    <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                                        Du kannst deine Liste nicht mehrfach wählen.
+                                    </Alert>
+                                </Snackbar>
+                            </>
+                        ) : (
+                            <div className="bottomList">
+                                <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
+                            </div>
+
+                        )}
+                    </>
+
+                ) : (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customList(wordsTrue)}</Grid>
+                        </Grid>
+
+                        <div className="bottomList">
+                            <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
+                            <ul style={{ marginTop: 20 }}>
+                                <li>
+                                    <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                )
+                }
+
+            </>
+
+        );
+
+
+        break;
+    case 2:
+        return (
+            <>
+                {showChoices ? (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
+                            <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
+                            <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
+                        </Grid>
+
+
+                        {showResults ? (
+                            <>
+                                <div className="bottomList">
+                                    <h3>Die gesuchte Liste ist Nummer 2. Deine gewählte Liste ist {right}.</h3>
+                                    <ul style={{ marginTop: 20 }}>
+                                        <li>
+                                            <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                    <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                                        Du kannst deine Liste nicht mehrfach wählen.
+                                    </Alert>
+                                </Snackbar>
+                            </>
+                        ) : (
+                            <div className="bottomList">
+                                <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
+                            </div>
+
+                        )}
+                    </>
+
+                ) : (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customList(wordsTrue)}</Grid>
+                        </Grid>
+
+                        <div className="bottomList">
+                            <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
+                            <ul style={{ marginTop: 20 }}>
+                                <li>
+                                    <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                )
+                }
+
+            </>
+
+        );
+
+
+        break;
+    case 3:
+        return (
+            <>
+                {showChoices ? (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Welche Liste ist die Richtige?</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customListButton(wordsFalse1, "wordsFalse1")}</Grid>
+                            <Grid item>{customListButton(wordsFalse2, "wordsFalse2")}</Grid>
+                            <Grid item>{customListButton(wordsTrue, "wordsTrue")}</Grid>
+                        </Grid>
+
+
+                        {showResults ? (
+                            <>
+                                <div className="bottomList">
+                                    <h3>Die gesuchte Liste ist Nummer 3. Deine gewählte Liste ist {right}.</h3>
+                                    <ul style={{ marginTop: 20 }}>
+                                        <li>
+                                            <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                    <Alert onClose={handleClose} severity="info" sx={{ width: '100%' }}>
+                                        Du kannst deine Liste nicht mehrfach wählen.
+                                    </Alert>
+                                </Snackbar>
+                            </>
+                        ) : (
+                            <div className="bottomList">
+                                <h3>Klicke einfach ein Element in der richtigen Liste an</h3>
+                            </div>
+
+                        )}
+                    </>
+
+                ) : (
+                    <>
+                        <h2 style={{ padding: 20, textAlign: "center" }}>Deine Aufgabe ist es dir die Liste zu merken und gleich wiederzufinden.</h2>
+                        <Grid container spacing={2} justifyContent="center" alignItems="center">
+                            <Grid item>{customList(wordsTrue)}</Grid>
+                        </Grid>
+
+                        <div className="bottomList">
+                            <h3>Wenn du dir die Liste gemerkt hast dann klicke auf Weiter</h3>
+                            <ul style={{ marginTop: 20 }}>
+                                <li>
+                                    <button className='buttonVariety' onClick={() => showChooseList()}>Weiter</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                )
+                }
+
+            </>
+
+        );
+
+
+        break;
+    case 4:
+        return (
+            <>
+                <h2 style={{ padding: 20, textAlign: "center" }}>Herzlichen Glückwunsch, du hast {score} von 4 Listen wiedergefunden.</h2>
+                <div className="bottomList">
+                    <h3>Wie du wahrscheinlich gemerkt hast, wurde es zunehmend schwerer, da die Listen immer größer geworden sind.</h3>
+                    <h3>Dabei sind diese Listen noch lange nicht groß genug, um mit Big Data in Verbindung gebracht zu werden.</h3>
+                    <h3>Bei Big Data geht es um mehrere Terrabyte an Daten.</h3>
+                    <h3>Durch dieses Spiel solltest du aber einen ersten Eindruck bekommen haben und verstanden haben,
+                        dass es zu viele Daten sind für herkömmliche Systeme.</h3>
+                    <h3>Was daduch für weitere Probleme entstehen erfährst du in Lektion 2.</h3>
+                    <ul style={{ marginTop: 20 }}>
+                        <li>
+                            <Link to="/lektion1" style={{ textDecoration: 'none', color: 'black' }}>
+                                <Typography color={'black'} textAlign="center">Lektion 1</Typography>
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </>
+
+        );
+
+
+        break;
+    default:
+        return (
+            <div className="App drag_things_to_boxes" style={{ marginTop: 20 }}>
+                <h2>Ups, da ist etwas schief gegangen. Bitte lade die Seite neu.</h2>
+            </div >
+        );
+        break;
+}
+
+
+}
+*/
