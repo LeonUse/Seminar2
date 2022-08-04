@@ -66,20 +66,17 @@ export default function CardExample() {
                         <CardActionArea>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Variety
+                                    PlaceHolder
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Variety steht für die Heterogenität der Daten. Diese entsteht, da die Daten von verschiedenen Systemen produziert
-                                    werden und somit verschiedenen Formaten vorliegen. Zusätzlich können sie in einer sortieren oder unsortieren Form
-                                    vorliegen und sie können auch unvollständig sein. Dadruch wird die Analyse erschwert.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Wenn du genauer verstehen möchtest, was Variety bedeutet, dann probier doch mal das Minigame.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Link to="/varietyGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+                            <Link to="/placeHolder" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                                 Game
                             </Button></Link>
                         </CardActions>
@@ -90,20 +87,17 @@ export default function CardExample() {
                         <CardActionArea>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Variability
+                                    PlaceHolder
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Variability (dt. Variabilität) steht für die Unbeständigkeit der Daten.
-                                    Sowohl die Übertragungsrate, das Format oder ihre Bedeutung können sich im Verlaufe
-                                    der Zeit oder abhängig von der Datenquelle verändern.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Wenn du genauer verstehen möchtest, was Variability bedeutet, dann probier doch mal das Minigame.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Link to="/variabilityGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+                            <Link to="/placeHolder" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                                 Game
                             </Button></Link>
                         </CardActions>

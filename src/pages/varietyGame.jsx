@@ -102,15 +102,19 @@ export default function VarietyGame() {
                         <Boxable targetKey="essen" label="Gurke" image="img/gurke.png" />
 
                     </div>
-                    <div className="headers">
-                        <h8>Essen</h8>
-                        <h8>Tiere</h8>
-                        <h8>Formen</h8>
-                    </div>
                     <div className="boxes">
-                        <Box targetKey="essen" />
-                        <Box targetKey="tier" />
-                        <Box targetKey="form" />
+                        <table style={{ border: 0 }}>
+                            <tr>
+                                <th><h8>Essen</h8></th>
+                                <th><h8>Tier</h8></th>
+                                <th><h8>Form</h8></th>
+                            </tr>
+                            <tr>
+                                <th><Box targetKey="essen" /></th>
+                                <th> <Box targetKey="tier" /></th>
+                                <th> <Box targetKey="form" /></th>
+                            </tr>
+                        </table>
                     </div>
                     <div style={{ clear: "both" }}>&nbsp;</div>
                     <ul style={{ marginTop: 20 }}>

@@ -1,3 +1,4 @@
+//Die Liste basiert auf einem Template von Material UI. https://mui.com/material-ui/react-transfer-list/
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
@@ -24,7 +25,7 @@ function intersection(a, b) {
 
 export default function velocityGame() {
 
-    const [showResults, setShowResults] = React.useState(true); //Prüfen, ob Ergebnis zeige
+    const [showResults, setShowResults] = React.useState(false); //Prüfen, ob Ergebnis zeige
     const [checked, setChecked] = React.useState([]);
     const [left, setLeft] = React.useState(new Array(10)
         .fill(true)
