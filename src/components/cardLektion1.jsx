@@ -2,12 +2,9 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import EqualizerIcon from '@mui/icons-material/Equalizer';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -24,9 +21,9 @@ export default function CardExample() {
                   Volume
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                  Volume steht für die große Menge an Daten, die jederzeit von vielen verschiede-nen Geräten produziert werden.
+                  Volume steht für die große Menge an Daten, die jederzeit von vielen verschiedenen Geräten produziert werden.
                   2020 wurden zum Beispiel 64,2 Zettabyte an Daten generiert oder repliziert. Für 2025 wird diese Menge auf 181
-                  Zettabyte geschätzt. 1 Zettabyte entspricht ca. 1.000.000.000 Terrabyte oder eine Millarde Terrabyte.
+                  Zettabyte geschätzt. 1 Zettabyte entspricht ca. 1.000.000.000 Terrabyte.
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                   Wenn du genauer verstehen möchtest, was Volume bedeutet, dann probier doch mal das Minigame.

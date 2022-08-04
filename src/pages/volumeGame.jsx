@@ -1,3 +1,4 @@
+
 // Die Liste basiert auf einem Template von Material UI. https://mui.com/material-ui/react-transfer-list/
 // Die Snackbar basiert auf einem Template von Material UI. https://mui.com/material-ui/react-snackbar/
 import '../pages/volumeGame.css'
@@ -29,12 +30,12 @@ export default function VarietyGame() {
     const [open, setOpen] = useState(false); //Snackbar
     const [end, setEnd] = useState(false);
     const [score, setScore] = useState(0);
+    const [rightList, setRightList] = useState(0);
     const [itemNumber, setItemNumber] = useState(3);
+    const [randomNumbers, setRandomNumbers] = useState();
     const [wordsTrue, setWordsTrue] = useState(new Array(itemNumber)
         .fill(true)
         .map(() => faker.word.adjective(true)));
-
-
 
     //const [randomQuiz, setRandomQuiz] = useState([]);
     //const [quiz, setQuiz] = useState(["wordsTrue", "wordsFalse1", "wordsFalse2"]);
@@ -64,7 +65,12 @@ export default function VarietyGame() {
 
     var randomList = [wordsTrue, wordsFalse1, wordsFalse2];
     var randomListWords = ["wordsTrue", "wordsFalse1", "wordsFalse2"];
-    var randomNumbers = mix([0, 1, 2]);
+
+    function loadData() {
+        var numbers = mix([0, 1, 2]);
+        setRandomNumbers(numbers);
+    }
+
 
     const handleClose = (event, reason) => {
         if (reason === "clickaway") {
@@ -74,12 +80,9 @@ export default function VarietyGame() {
         setOpen(false);
     };
 
-    /* const backToStart = () => {
-         setLevel(0);
-     };
-     */
 
     const showChooseList = () => {
+        loadData();
         if (showChoices) {
             setShowChoices(false);
         } else {
@@ -119,13 +122,13 @@ export default function VarietyGame() {
 
     const checkList = (value) => () => {
         if (click) {
+            setRightList(randomNumbers[0] + 1);
             if (value == "wordsTrue") {
                 setRight("richtig");
                 setScore(score + 1);
             } else {
                 setRight("falsch");
             }
-
             setShowResults(true);
             setClick(false);
             console.log("Right?:", right);
@@ -214,7 +217,7 @@ export default function VarietyGame() {
                                 {showResults ? (
                                     <>
                                         <div className="bottomList">
-                                            <h3>Die gesuchte Liste ist Nummer 1. Deine gewählte Liste ist {right}.</h3>
+                                            <h3>Die gesuchte Liste ist Nummer {rightList}. Deine gewählte Liste ist {right}.</h3>
                                             <ul style={{ marginTop: 20 }}>
                                                 <li>
                                                     <button className='buttonVariety' onClick={() => nextLevel()}>Nächtes Level</button>

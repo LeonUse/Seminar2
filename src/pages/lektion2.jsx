@@ -9,7 +9,7 @@ function Lektion2() {
     return (
         <div className='head'>
             <h1>Big Data -</h1>
-            <p>Probleme</p>
+            <p>Skalierung</p>
             <iframe className='video' width="840" height="472" src="https://www.youtube-nocookie.com/embed/Ph6YSr7f5-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div className="body">
                 <Container maxWidth="xl">

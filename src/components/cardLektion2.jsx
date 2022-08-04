@@ -2,12 +2,9 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import EqualizerIcon from '@mui/icons-material/Equalizer';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -21,10 +18,11 @@ export default function CardExample() {
                         <CardActionArea>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Parallelverarbeitung
+                                    Vertikale Skalierung
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Text
+                                    Bei der vertikalen Methode wird von einem System die Hardware (z.B. Prozessor, Gra-fikkarte, Arbeitsspeicher) verbessert und somit eine höhere Performance erreicht.
+                                    Hierbei limitiert jedoch die Physik die Obergrenzen des Systems. Die Skalierbarkeit ist begrenzt.
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                                     Wenn du genauer verstehen möchtest, was es mit Parallelverarbeitung auf sich hat,
@@ -34,7 +32,29 @@ export default function CardExample() {
                         </CardActionArea>
                         <CardActions>
                             <Link to="/parallelGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
-                                Game
+                                Skalierung Game
+                            </Button></Link>
+                        </CardActions>
+                    </Card>
+                </Grid>
+                <Grid item xs>
+                    <Card sx={{ maxWidth: 380 }}>
+                        <CardActionArea>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    Horizonzale Skalierung
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary" fontSize="medium">
+                                    Bei der horizontalen Skalierung werden mehrere Systeme zusammengeschaltet, sodass diese wie ein einziges System funktionieren.
+                                    Hierbei kann eine deutlich bessere Skalierbarkeit erreicht werden, weshalb dieser Ansatz der bessere für Big Data ist.
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary" fontSize="medium">
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                            <Link to="/parallelGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+                                Skalierung Game
                             </Button></Link>
                         </CardActions>
                     </Card>
@@ -57,27 +77,6 @@ export default function CardExample() {
                         <CardActions>
                             <Link to="/loadingGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                                 Siumlation
-                            </Button></Link>
-                        </CardActions>
-                    </Card>
-                </Grid>
-                <Grid item xs>
-                    <Card sx={{ maxWidth: 380 }}>
-                        <CardActionArea>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    PlaceHolder
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Link to="/placeHolder" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
-                                Game
                             </Button></Link>
                         </CardActions>
                     </Card>
