@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import { faker } from '@faker-js/faker';
-import '../games/velocityGame.css'
+import './velocityGame.css'
 import { Avatar, ImageListItem, ListItemAvatar, ListItemIcon } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import '../games/vertikaleSkalierung.css'
+import './vertikaleSkalierung.css'
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
@@ -16,8 +16,6 @@ function VertikaleSkalierung() {
     const [level, setLevel] = useState(0);
     const [gameStarted, setGameStarted] = useState(false);
     const [showResults, setShowResults] = useState(false);
-
-
 
     let multiplier = 99;
     let eingabe = false;
@@ -52,7 +50,6 @@ function VertikaleSkalierung() {
         timerLeftTime();
 
     }
-
 
 
     function startGame() {

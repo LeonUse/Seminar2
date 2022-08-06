@@ -9,13 +9,13 @@ import {
 import Homepage from './pages/homepage'
 import Lektion1 from './pages/lektion1';
 import Lektion2 from './pages/lektion2';
-import VelocityGame from './games/velocityGame';
-import VarietyGame from './games/varietyGame';
-import VolumeGame from './games/volumeGame';
+import VelocityGame from './components/velocityGame/velocityGame';
+import VarietyGame from './components/varietyGame/varietyGame';
+import VolumeGame from './components/volumeGame/volumeGame';
 import Quiz from './pages/quiz';
-import LoadingGame from './games/loadingGame';
-import VertikaleSkalierung from './games/vertikaleSkalierung';
-import HorizontaleSkalierung from './games/horizontaleSkalierung';
+import LoadingGame from './components/loadingSimulation/loadingGame';
+import VertikaleSkalierung from './components/vertikaleSkalierung/vertikaleSkalierung';
+import HorizontaleSkalierung from './components/horizonzaleSkalierung/horizontaleSkalierung';
 import NotFound from './pages/notFound';
 
 function App() {

@@ -1,5 +1,5 @@
 //Das Laden stammt aus einem Template von Material UI. https://mui.com/material-ui/react-progress/#DelayingAppearance.js
-import '../games/loadingGame.css'
+import './loadingGame.css'
 import React, { useEffect, useState } from "react";
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -7,8 +7,6 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
-
-
 
 
 export default function LoadingGame() {

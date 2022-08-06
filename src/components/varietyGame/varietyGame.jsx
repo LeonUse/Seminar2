@@ -1,5 +1,5 @@
 // Die Drag and Drop Logik bassiert auf einem Projekt von Gina Franco. https://codesandbox.io/u/ginafranco https://codesandbox.io/s/react-drag-drop-container-go845?file=/public/index.html
-import '../games/varietyGame.css'
+import './varietyGame.css'
 import Boxable from "./varietyGameBoxable";
 import Box from "./varietyGameBox";
 import React, { useState } from "react";

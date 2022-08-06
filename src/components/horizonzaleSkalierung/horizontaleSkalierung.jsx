@@ -1,5 +1,5 @@
 
-import '../games/horizontaleSkalierung.css'
+import './horizontaleSkalierung.css'
 import React, { useState } from "react";
 import { faker } from '@faker-js/faker';
 import Grid from '@mui/material/Grid';
