@@ -1,7 +1,7 @@
 
 // Die Liste basiert auf einem Template von Material UI. https://mui.com/material-ui/react-transfer-list/
 // Die Snackbar basiert auf einem Template von Material UI. https://mui.com/material-ui/react-snackbar/
-import '../pages/volumeGame.css'
+import '../games/volumeGame.css'
 import React, { useState } from "react";
 import { faker } from '@faker-js/faker';
 import Grid from '@mui/material/Grid';

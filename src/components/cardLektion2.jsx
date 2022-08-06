@@ -31,7 +31,7 @@ export default function CardExample() {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Link to="/parallelGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+                            <Link to="/vertikaleSkalierung" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                                 Skalierung Game
                             </Button></Link>
                         </CardActions>
@@ -53,7 +53,7 @@ export default function CardExample() {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Link to="/parallelGame" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
+                            <Link to="/horizontaleSkalierung" style={{ textDecoration: 'none' }}><Button size="large" color="primary">
                                 Skalierung Game
                             </Button></Link>
                         </CardActions>

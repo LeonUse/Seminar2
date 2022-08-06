@@ -9,12 +9,13 @@ import {
 import Homepage from './pages/homepage'
 import Lektion1 from './pages/lektion1';
 import Lektion2 from './pages/lektion2';
-import VelocityGame from './pages/velocityGame';
-import VarietyGame from './pages/varietyGame';
-import VolumeGame from './pages/volumeGame';
+import VelocityGame from './games/velocityGame';
+import VarietyGame from './games/varietyGame';
+import VolumeGame from './games/volumeGame';
 import Quiz from './pages/quiz';
-import LoadingGame from './pages/loadingGame';
-import ParallelGame from './pages/parallelGame';
+import LoadingGame from './games/loadingGame';
+import VertikaleSkalierung from './games/vertikaleSkalierung';
+import HorizontaleSkalierung from './games/horizontaleSkalierung';
 import NotFound from './pages/notFound';
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
           <Route path='/volumeGame' element={<VolumeGame />} />
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/loadingGame' element={<LoadingGame />} />
-          <Route path='/parallelGame' element={<ParallelGame />} />
+          <Route path='/vertikaleSkalierung' element={<VertikaleSkalierung />} />
+          <Route path='/horizontaleSkalierung' element={<HorizontaleSkalierung />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

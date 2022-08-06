@@ -1,4 +1,5 @@
-import '../pages/parallelGame.css'
+
+import '../games/horizontaleSkalierung.css'
 import React, { useState } from "react";
 import { faker } from '@faker-js/faker';
 import Grid from '@mui/material/Grid';
@@ -13,9 +14,10 @@ import MuiAlert from '@mui/material/Alert';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import { color } from '@mui/system';
 
 
-function ParallelGame() {
+function HorizontaleSkalierung() {
     const [showResults, setShowResults] = useState(true);
     const [number, setNumber] = useState([0, 1, 2, 3]);
     const [result, setResult] = useState([10, 180, 120, 40]);
@@ -90,13 +92,13 @@ function ParallelGame() {
         return `${value}°C`;
     }
 
-    const handleSliderChange = (newValue) => {
+    const handleSliderChange = (arialabel, id) => {
         var tempArray = [...sliderValue];
-        tempArray[0] = newValue;
+        tempArray[arialabel] = id;
         setSliderValue(tempArray);
-        console.log("Slider change, Value:", newValue);
-        console.log("ArrayWert:", sliderValue[0]);
-        console.log("Array Nummer:", 0);
+        console.log("Slider change, Value:", id);
+        console.log("ArrayWert:", sliderValue[id]);
+        console.log("aria-label", arialabel);
     };
 
     const customListBar = (items) => (
@@ -107,8 +109,6 @@ function ParallelGame() {
                     key={value}
                 >
                     <Slider
-                        id={items.value}
-                        aria-label="Temperature"
                         defaultValue={100}
                         getAriaValueText={valuetext}
                         valueLabelDisplay="auto"
@@ -159,8 +159,11 @@ function ParallelGame() {
                     <th >{customListResult(result)}</th>
                 </tr>
             </table>
+
+            <h1>Das Spiel geht noch nicht!</h1>
         </>
     )
 }
 
-export default ParallelGame;
+export default HorizontaleSkalierung;
+
