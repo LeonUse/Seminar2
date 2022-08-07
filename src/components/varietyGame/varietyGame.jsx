@@ -63,7 +63,7 @@ export default function VarietyGame() {
 
                     </div>
                     <div style={{ clear: "both" }}>&nbsp;</div>
-                    <h3>Wenn du alles Ordnungsgemäß sortiert hast, dann geht es hier zur nächsten Stufe</h3>
+                    <h3>Wenn du alles ordnungsgemäß sortiert hast, dann geht es hier zur nächsten Stufe</h3>
                     <ul style={{ marginTop: 20 }}>
                         <li>
                             <button className='buttonVariety' onClick={() => nextLevel()}>Nächste Stufe</button>
@@ -119,7 +119,7 @@ export default function VarietyGame() {
                     <div style={{ clear: "both" }}>&nbsp;</div>
                     <ul style={{ marginTop: 20 }}>
                         <li>
-                            <strong>Wie du siehst passen nicht alle Bilder in die Vorgegebenen Kategorien. Genau das gleiche Problem kann auch bei Big Data auftreten.</strong>
+                            <strong>Wie du siehst, passen nicht alle Bilder in die vorgegebenen Kategorien. Genau das gleiche Problem kann auch bei Big Data auftreten.</strong>
                         </li>
                         <li>
                             <strong>Die Daten können von vielen verschiedenen Systemen kommen und daher unterschiedliche Formate haben, sortiert, unsortiert oder auch unvollständig sein.</strong>

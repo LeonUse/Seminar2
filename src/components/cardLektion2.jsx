@@ -25,7 +25,7 @@ export default function CardExample() {
                                     Hierbei limitiert jedoch die Physik die Obergrenzen des Systems. Die Skalierbarkeit ist begrenzt.
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Wenn du genauer verstehen möchtest, was es mit Parallelverarbeitung auf sich hat,
+                                    Wenn du genauer verstehen möchtest, was es mit der Skalierung auf sich hat,
                                     dann probier doch mal das kleine Minigame.
                                 </Typography>
                             </CardContent>
@@ -67,7 +67,9 @@ export default function CardExample() {
                                     Ladezeiten
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                                    Text
+                                    Wir haben bereits gelernt, dass Big Data mit großen Datenmengen zurecht kommen muss.
+                                    Das Laden der Daten benötigt mehr Zeit, wenn die Datenmenge größer ist, woduurch ein neues Problem entsteht:
+                                    Die Ladezeit.
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                                     Wenn du ein Beispiel dafür möchtest dann probier doch mal die kleine Simulation.

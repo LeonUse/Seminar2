@@ -83,12 +83,14 @@ function VertikaleSkalierung() {
             {showResults ? (
                 <>
                     <h1 style={{ textAlign: "center", marginTop: 40, fontSize: 50 }}>Du hast {score} von {level} Leveln richtig!</h1>
-                    <h1 style={{ textAlign: "center", }}>Um mehr Level in der gleichen Zeit zu schaffen könnte man die vertikale oder horionzale Skalierung einsetzen.</h1>
+                    <h1 style={{ textAlign: "center", }}>Um mehr Level in der gleichen Zeit zu schaffen, könnte man die vertikale oder horionzale Skalierung einsetzen.</h1>
                     <h3 style={{ textAlign: "center" }}>Bei der vertikalen Skalierung könnte man z.B. einen schneller Menschen das Spiel spielen lassen.</h3>
-                    <h3 style={{ textAlign: "center" }}>Aber ein Mensch hat irgendwo seine Grenzen.</h3>
+                    <h3 style={{ textAlign: "center" }}>Aber ein Mensch hat irgendwo seine Grenzen. Seine Fähigkeiten sind immer limitiert.</h3>
+                    <h3 style={{ textAlign: "center" }}>Das Gleiche gilt auch für einen Computer.</h3>
                     <br />
                     <h3 style={{ textAlign: "center" }}>Bei der horizontalen Skalierung könnte man einfach mehr Menschen gleichzeitig diese Aufgaben lösen lassen.</h3>
-                    <h3 style={{ textAlign: "center" }}>Wenn jeder pro 5 Sekunden 1 level schaffen würde dann wären das 40 Level.</h3>
+                    <h3 style={{ textAlign: "center" }}>Angenommen 10 Menschen spielen das Spiel gleichzeitig.</h3>
+                    <h3 style={{ textAlign: "center" }}>Wenn jeder alle 5 Sekunden 1 level schaffen würde, dann wären das 40 Level.</h3>
                     <br />
                     <h3 style={{ textAlign: "center" }}>Ein Mensch alleine müsste dafür alle 0,5 Sekunden ein Level schaffen.</h3>
                     <h3 style={{ textAlign: "center" }}>Das ist jedoch sehr unrealistisch.</h3>
@@ -103,7 +105,7 @@ function VertikaleSkalierung() {
                 </>
             ) : (
                 <>
-                    <h1 style={{ textAlign: "center", marginTop: 40, fontSize: 50 }}>Zähle die geraden Ziffern!</h1>
+                    <h1 style={{ textAlign: "center", marginTop: 40, fontSize: 50 }}>Zähle die geraden Ziffern! (0,2,4,6,8)</h1>
                     <h1 style={{ textAlign: "center", }}>Wie viele Level schaffst du in 20 Sekunden?</h1>
                     <h3 style={{ textAlign: "center" }}>Du hast bisher {score} von {level} richtig</h3>
                     <h3 style={{ textAlign: "center", marginBottom: 40 }}>Du hast noch <span id="time">20</span> Sekunden Zeit!</h3>

@@ -75,7 +75,7 @@ export default function LoadingGame() {
             <div className="textLoadingGame">
                 <p className='pLoadingGame'>Diese Simulation soll das Problem mit der Ladezeit verdeutlichen.</p>
                 <p className='pLoadingGame'>Die Liste 1 stellt eine kleine Liste dar. Liste 2 hingegen stellt eine Big Data Liste dar.</p>
-                <p className='pLoadingGame'>Probier sie doch einfach einmal zu Laden und beobachte den Unterschied.</p>
+                <p className='pLoadingGame'>Probier sie doch einfach einmal zu laden und beobachte den Unterschied.</p>
             </div>
             <table className="tableLoadingGame">
                 <tr>

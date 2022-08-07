@@ -120,9 +120,9 @@ export default function VarietyGame() {
         }
     };
 
-    const checkList = (value) => () => {
+    const checkList = (value, position) => () => {
         if (click) {
-            setRightList(randomNumbers[0] + 1);
+            setRightList(position);
             if (value == "wordsTrue") {
                 setRight("richtig");
                 setScore(score + 1);
@@ -178,9 +178,9 @@ export default function VarietyGame() {
                         <h3>Wie du wahrscheinlich gemerkt hast, wurde es zunehmend schwerer, da die Listen immer größer geworden sind.</h3>
                         <h3>Dabei sind diese Listen noch lange nicht groß genug, um mit Big Data in Verbindung gebracht zu werden.</h3>
                         <h3>Bei Big Data geht es um mehrere Terrabyte an Daten.</h3>
-                        <h3>Durch dieses Spiel solltest du aber einen ersten Eindruck bekommen haben und verstanden haben,
+                        <h3>Durch dieses Spiel solltest du aber einen ersten Eindruck bekommen und verstanden haben,
                             dass es zu viele Daten sind für herkömmliche Systeme.</h3>
-                        <h3>Was daduch für weitere Probleme entstehen erfährst du in Lektion 2.</h3>
+
                         <ul style={{ marginTop: 20 }}>
                             <li>
                                 <Link to="/lektion1" style={{ textDecoration: 'none', color: 'black' }}>
@@ -201,9 +201,9 @@ export default function VarietyGame() {
                                 <Grid container spacing={2} justifyContent="center" >
                                     <table style={{ border: 0 }}>
                                         <tr>
-                                            <th><button className='buttonVariety' onClick={checkList(randomListWords[randomNumbers[0]])}>Liste 1</button></th>
-                                            <th><button className='buttonVariety' onClick={checkList(randomListWords[randomNumbers[1]])}>Liste 2</button></th>
-                                            <th><button className='buttonVariety' onClick={checkList(randomListWords[randomNumbers[2]])}>Liste 3</button></th>
+                                            <th><button className='buttonVariety' onClick={checkList(randomListWords[randomNumbers[0]], 1)}>Liste 1</button></th>
+                                            <th><button className='buttonVariety' onClick={checkList(randomListWords[randomNumbers[1]], 2)}>Liste 2</button></th>
+                                            <th><button className='buttonVariety' onClick={checkList(randomListWords[randomNumbers[2]], 3)}>Liste 3</button></th>
                                         </tr>
                                         <tr>
                                             <th><Grid item>{customList(randomList[randomNumbers[0]])}</Grid></th>

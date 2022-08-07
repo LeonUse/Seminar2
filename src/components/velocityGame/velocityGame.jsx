@@ -137,11 +137,11 @@ export default function velocityGame() {
             {showResults ? (
                 <div className="intro">
                     <h1>Dieses Game zeigt dir, was Geschwindigkeit im Sinne von Big Data bedeutet.</h1>
-                    <p>Deine Aufgabe ist es die Kazen Bilder links und die anderen Bilder rechts zu sortieren.</p>
+                    <p>Deine Aufgabe ist es die Katzenbilder links und die anderen Bilder rechts zu sortieren.</p>
                     <div>
                         <p class="small">Wie du siehst kommen die Daten viel zu schnell.</p>
-                        <p class="small">Man könnte dein Erlebnis mit einer traditionellen Software vergleiche, die Versucht mit der Geschwindigkeit von Big Data mitzuhalten.</p>
-                        <p class="small">Wenn du dein Glück dennoch ein weiteres mal Versuchen willst drück einfach F5 oder lade die Seite neu.</p>
+                        <p class="small">Man könnte dein Erlebnis mit einem traditionellen System vergleiche, das versucht mit der Geschwindigkeit von Big Data mitzuhalten.</p>
+                        <p class="small">Wenn du dein Glück dennoch ein weiteres Mal versuchen willst, drück einfach F5 oder lade die Seite neu.</p>
                     </div>
                     <ul style={{ marginTop: 20 }}>
                         <li>
@@ -155,7 +155,7 @@ export default function velocityGame() {
                 <>
                     <div className="intro">
                         <h1>Dieses Game zeigt dir, was Geschwindigkeit im Sinne von Big Data bedeutet.</h1>
-                        <p>Deine Aufgabe ist es die Kazen Bilder links und die anderen Bilder rechts zu sortieren.</p>
+                        <p>Deine Aufgabe ist es die Katzenbilder links und die anderen Bilder rechts zu sortieren.</p>
                         <div className='gameButton'>
                             <Button variant='outlined' onClick={() => { startTimer() }}>
                                 Start Game

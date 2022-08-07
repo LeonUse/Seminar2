@@ -21,7 +21,7 @@ export default function CardExample() {
                   Volume
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                  Volume steht für die große Menge an Daten, die jederzeit von vielen verschiedenen Geräten produziert werden.
+                  Volume steht für die große Menge an Daten, die jederzeit von vielen verschiedenen Geräten produziert wird.
                   2020 wurden zum Beispiel 64,2 Zettabyte an Daten generiert oder repliziert. Für 2025 wird diese Menge auf 181
                   Zettabyte geschätzt. 1 Zettabyte entspricht ca. 1.000.000.000 Terrabyte.
                 </Typography>
@@ -46,8 +46,8 @@ export default function CardExample() {
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                   Velocity bezeichnet die hohe Geschwindigkeit, mit der die Datenmenge
-                  produziert, übertragen, gespeichert und analysiert werden. Im besten Fall
-                  spricht man dabei von Echtzeit.
+                  produziert, übertragen, gespeichert und analysiert wird. Im besten Fall
+                  funktioniert das in Echtzeit.
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                   Wenn du genauer verstehen möchtest, was Velocity bedeutet, dann probier doch mal das Minigame.
@@ -70,8 +70,8 @@ export default function CardExample() {
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                   Variety steht für die Heterogenität der Daten. Diese entsteht, da die Daten von verschiedenen Systemen produziert
-                  werden und somit verschiedenen Formaten vorliegen. Zusätzlich können sie in einer sortieren oder unsortieren Form
-                  vorliegen und sie können auch unvollständig sein. Dadruch wird die Analyse erschwert.
+                  werden und somit in verschiedenen Formaten vorliegen. Zusätzlich können sie in einer sortierten, unsortierten Form
+                  oder auch unvollständig vorliegen. Dadurch wird die Analyse erschwert.
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
                   Wenn du genauer verstehen möchtest, was Variety bedeutet, dann probier doch mal das Minigame.
@@ -93,8 +93,8 @@ export default function CardExample() {
                   Variability
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
-                  Variability (dt. Variabilität) steht für die Unbeständigkeit der Daten.
-                  Sowohl die Übertragungsrate, das Format oder ihre Bedeutung können sich im Verlaufe
+                  Variability steht für die Unbeständigkeit der Daten.
+                  Sowohl die Übertragungsrate, als auch das Format oder ihre Bedeutung können sich im Verlaufe
                   der Zeit oder abhängig von der Datenquelle verändern.
                 </Typography>
                 <Typography variant="body2" color="text.secondary" fontSize="medium">
